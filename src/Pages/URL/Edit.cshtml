@@ -1,0 +1,55 @@
+﻿@page
+@model ShortUrl.Pages.URL.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>RedirectUrl</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RedirectUrl.RedirectUrlId" />
+            <div class="form-group">
+                <label asp-for="RedirectUrl.Name" class="control-label"></label>
+                <input asp-for="RedirectUrl.Name" class="form-control" />
+                <span asp-validation-for="RedirectUrl.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RedirectUrl.RedirectTo" class="control-label"></label>
+                <input asp-for="RedirectUrl.RedirectTo" class="form-control" />
+                <span asp-validation-for="RedirectUrl.RedirectTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RedirectUrl.Slug" class="control-label"></label>
+                <input asp-for="RedirectUrl.Slug" class="form-control" />
+                <span asp-validation-for="RedirectUrl.Slug" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RedirectUrl.Description" class="control-label"></label>
+                <input asp-for="RedirectUrl.Description" class="form-control" />
+                <span asp-validation-for="RedirectUrl.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RedirectUrl.ShortUrlUserId" class="control-label"></label>
+                <input asp-for="RedirectUrl.ShortUrlUserId" class="form-control" />
+                <span asp-validation-for="RedirectUrl.ShortUrlUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
